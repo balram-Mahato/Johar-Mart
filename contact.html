@@ -303,13 +303,57 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.2s">
+                        
+                        <!-- <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.2s">
                             <div class="h-100 rounded">
                                 <iframe class="rounded w-100" 
                                 style="height: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m91!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" 
                                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
-                        </div>
+                        </div> -->
+
+
+<style>
+        /* Map ka size set karna zaroori hai */
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>My Google Map</h2>
+<div id="map"></div>
+
+<script>
+    function initMap() {
+        // Location (example: Delhi)
+        var location = { lat: 28.6139, lng: 77.2090 };
+
+        // Map create karna
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: location
+        });
+
+        // Marker add karna
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+</script>
+
+<!-- Google Maps API (API KEY yahan lagao) -->
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyDn_68gT58QyM9YALnTf2UfroHV-0BS5co&callback=initMap"
+    async
+    defer>
+</script>
+
+                        
                         <div class="col-lg-91">
                             <div class="row g-4 align-items-center justify-content-center">
                                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
@@ -501,5 +545,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     </body>
+
 
 </html>
